@@ -1,0 +1,137 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .card {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    position: relative;
+  }
+  
+  .card__front{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    background-image: url(../img/bg-card.jpg);
+    backface-visibility: hidden;
+    border-radius: 10px;
+    
+  }
+  .card__back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+  
+  .card__front {
+    transform: rotateY(0deg);
+  }
+  
+  .card__back {
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .card__front {
+    transform: rotateY(-180deg);
+  }
+  
+  .card:hover .card__back {
+    transform: rotateY(0deg);
+  }
+  
+  .card__chip {
+    width: 50px;
+    height: 30px;
+    background-image: url(../img/chip-tarjeta.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    z-index: 2; /* Coloca el chip sobre el texto y detrás del CVV */
+  }
+  
+  .card__number,
+  .card__holder,
+  .card__expiry {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 1; /* Coloca el texto sobre el fondo y el chip */
+  }
+  
+  .card__info {
+    position: absolute;
+    bottom: 20px;
+    top: 100px;
+    width: 100%;
+    left: -5%;
+    color: #fff;
+  }
+  
+  .card__back {
+    background-image: url(../img/bg-card.jpg);
+    z-index: 0; /* Coloca el fondo detrás de todo */
+  }
+  
+  .card__bar {
+    width: 100%;
+    height: 40px;
+    background-color: #000000;
+    position: absolute;
+    top: -2px;
+    border-radius: 10px;
+    left: 0;
+  }
+  
+  .card__cvv {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    text-align: right;
+    z-index: 1; /* Coloca el CVV sobre el fondo */
+  }
+  
+  .card__cvvLabel {
+    font-size: 0.8em;
+    opacity: 0.7;
+  }
+  
+  .card__cvvValue {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+
+  .card__expiry{
+    top: 70%;
+    left: -190px;
+  }
+
+  .card__brand{
+    position: absolute;
+    top: 140px;
+    left: 200px;
+    color: #fff;
+    z-index: 1; /* Coloca el CVV sobre el fondo */
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 100px;
+  }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Tarjeta de Pago Personalizada</title>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="card__front">
+      <div class="card__chip"></div>
+      <div class="card__number" id="cardNumber">**** **** **** ****</div>
+      <div class="card__info">
+        <div class="card__holder" id="cardHolder">Nombre del Titular</div>
+      </div>
+      <div class="card__brand" id="cardBrand">
+        <img style="height: 70px;" src="img/visa.png" alt="Visa">
+      </div>
+    </div>
+    <div class="card__back">
+      
+      <div class="card__bar"></div>
+      <div class="card__cvv">
+        <div class="card__cvvLabel">CVV</div>
+        <div class="card__cvvValue" id="cardCvv">123</div>
+        <div class="card__expiry" id="cardExpiry">MM/YY</div>
+      </div>
+    </div>
+  </div>
+  
+
+  <form id="cardForm">
+    <label for="cardNumberInput">Número de Tarjeta:</label>
+    <input type="text" id="cardNumberInput" placeholder="**** **** **** ****" maxlength="19" oninput="formatCardNumber(this.value)"><br>
+
+    <label for="cardHolderInput">Nombre del Titular:</label>
+    <input type="text" id="cardHolderInput" placeholder="Nombre del Titular" maxlength="21" oninput="updateCardHolder(this.value)"><br>
+
+    <label for="cardExpiryInput">Fecha de Expiración:</label>
+    <input type="text" id="cardExpiryInput" placeholder="MM/YY" maxlength="5" oninput="formatCardExpiry(this.value)"><br>
+
+    <label for="cardCvvInput">CVV:</label>
+    <input type="text" id="cardCvvInput" placeholder="123" maxlength="3" oninput="updateCardCvv(this.value)"><br>
+  </form>
+
+  <script src="js/functions.js"></script>
+</body>
+</html>
